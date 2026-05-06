@@ -1,4 +1,4 @@
-#Mini Search Engine + RAG
+# Mini Search Engine + RAG
 
 ## 1. System Architecture
 
