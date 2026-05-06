@@ -7,61 +7,51 @@ class Parser:
     def __init__ (self, datapath: str ):
         self.data = datapath
         self.tokens = dict()
+        self.raw_texts = dict()
         
         self.stop_words = set(stopwords.words('english'))
         self.stemmer = PorterStemmer()
 
-    
     def parse(self):
         title = False
         words = False 
         raw_text = ''
         id = None 
         with open(self.data,'r') as file:
-            
             for line in file:
-                
                 line = line.strip() 
                 if not line:
                     continue
-                
                 if line.startswith('.I'):
                     if id is not None:
-                        raw_text = self._preprocoess_pipeline(raw_text)
-                        self.tokens[id] = raw_text # set the raw text to the previous id 
-                    id =  int(line.split()[1]) # split line by spaces and get the second item 
+                        self.raw_texts[id] = raw_text.strip()
+                        processed_tokens = self._preprocoess_pipeline(raw_text)
+                        self.tokens[id] = processed_tokens
+                    id =  int(line.split()[1]) 
                     raw_text = ''
-                    
                     words = False
                     title = False
                     continue
-                
                 elif line.startswith('.T'):
                     title = True 
                     words = False
                     continue
-                
                 elif line.startswith('.W'):
                     words = True 
                     title = False
                     continue
-                
                 elif line.startswith('.A') or line.startswith('.B'):
                     title = False
                     words = False 
                     continue
-                
-                
                 if title or words :
                     raw_text += line + ' '
-                    
                 else: continue
-                
             if id is not None:
-                raw_text = self._preprocoess_pipeline(raw_text)
-                self.tokens[id] = raw_text     
+                self.raw_texts[id] = raw_text.strip()
+                processed_tokens = self._preprocoess_pipeline(raw_text)
+                self.tokens[id] = processed_tokens
         
-    
     def tokenize(self, text:str) ->list[str]:
         return word_tokenize(text,language='english',)
     
