@@ -1,6 +1,4 @@
-# Project Technical Documentation: Mini Search Engine + RAG
-
-This document provides an A-to-Z explanation of the repository architecture, mathematical foundations, and performance metrics.
+#Mini Search Engine + RAG
 
 ## 1. System Architecture
 
