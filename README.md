@@ -25,8 +25,8 @@ A hybrid search system combining classical Information Retrieval (IR) with AI-po
 
 | Metric | Score |
 | :--- | :--- |
-| **MAP (Mean Average Precision)** | **0.2146** |
-| **NDCG (Normalized Discounted Cumulative Gain)** | **0.3302** |
+| **MAP (Mean Average Precision)** | **0.2722** |
+| **NDCG (Normalized Discounted Cumulative Gain)** | **0.5108** |
 
 ## Architecture
 
