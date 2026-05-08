@@ -1,6 +1,7 @@
 __pycache__/
-venv/
+.venv/ 
 cran/
 .env
 *.pyc
+.idea/
 .DS_Store
