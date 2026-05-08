@@ -40,7 +40,8 @@ The project is fully containerized using Docker for easy setup and deployment.
 
 ### Quick Start
 - create a .env file that containes your api key GROQ_API_KEY=
-- ```bash 
+
+```bash
 docker-compose up --build
 ```
 
