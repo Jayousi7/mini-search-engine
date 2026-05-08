@@ -7,7 +7,7 @@ import math
 from collections import defaultdict
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv('.env')
 
 app = Flask(__name__)
 
@@ -57,7 +57,7 @@ def search():
     query = request.json.get('query')
     if not query:
         return jsonify({"error": "No query provided"}), 400
-    results = SE.search(query, k=5)
+    results = SE.search(query, k=10)
     retrieved_docs = []
     for d_id, score in results:
         full_text = SE.raw_docs.get(d_id, "")

@@ -25,8 +25,8 @@ class SearchEngine:
     def compute_doc_lengths(self):
         self.doc_lengths = {}
         for doc_id ,vector in self.doc_vectors.items():
-            sum_suares = sum(weight** 2 for weight in vector.values())
-            self.doc_lengths[doc_id] = math.sqrt(sum_suares)
+            sum_squares = sum(weight** 2 for weight in vector.values())
+            self.doc_lengths[doc_id] = math.sqrt(sum_squares)
     def search(self,query:str,k:int = 10):
         if isinstance(query,str):
             query = Parser('')._preprocoess_pipeline(query)
