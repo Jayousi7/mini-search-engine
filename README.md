@@ -20,8 +20,6 @@ The project is structured into a modular pipeline following standard Information
     *   **Inverse Document Frequency (IDF):** Calculated as $\log_{10}(N / df_t)$.
 *   **Cosine Similarity:** The engine ranks documents by calculating the cosine of the angle between the Query vector ($Q$) and the Document vector ($D$).
 
-> **Cosine Similarity Formula:**
-> $$\text{Score}(Q, D) = \frac{\sum_{i=1}^{n} w_{i,Q} \cdot w_{i,D}}{\sqrt{\sum_{i=1}^{n} w_{i,Q}^2} \cdot \sqrt{\sum_{i=1}^{n} w_{i,D}^2}}$$
 
 ### C. System Evaluation (`evaluate_sys.py`)
 *   **Mean Average Precision (MAP):** **0.2146**
