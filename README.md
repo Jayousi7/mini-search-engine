@@ -39,8 +39,8 @@ A hybrid search system combining classical Information Retrieval (IR) with AI-po
 The project is fully containerized using Docker for easy setup and deployment.
 
 ### Quick Start
-
-```bash
+- create a .env file that containes your api key GROQ_API_KEY=
+- ```bash 
 docker-compose up --build
 ```
 
