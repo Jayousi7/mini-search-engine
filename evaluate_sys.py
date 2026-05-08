@@ -38,7 +38,7 @@ def evaluate():
         hits = 0 
         sum_precisions = 0 
         dcg = 0.0
-        search_result = SE.search(query,k=10)
+        search_result = SE.search(query,k=1400)
         for rank , (d_id,score) in enumerate(search_result,start=1):
             if d_id in gt[q_id] and gt[q_id][d_id]>0:
                 hits+=1
